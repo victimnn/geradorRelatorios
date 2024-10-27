@@ -50,8 +50,6 @@ if st.sidebar.button('Gerar Relatório'):
         idioma=idioma,
         analise=analise
     )
-    st.session_state["report_generated"] = True  # Armazena o estado para evitar recarga repetida
-    st.experimental_rerun()  # Fecha o menu forçando recarga da página
 
     response = llm.invoke(prompt)
 
