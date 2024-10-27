@@ -34,7 +34,7 @@ analises = [
     "Análise de Posição de Mercado"
 ]
 
-st.title('Gerador de Relatório Financeiro:')
+st.title('Gerador de Relatórios Financeiros:')
 
 empresa = st.sidebar.selectbox('Selecione a empresa:', empresas)
 trimestre = st.sidebar.selectbox('Selecione o trimestre:', trimestres)
@@ -50,6 +50,8 @@ if st.sidebar.button('Gerar Relatório'):
         idioma=idioma,
         analise=analise
     )
+    st.session_state["report_generated"] = True  # Armazena o estado para evitar recarga repetida
+    st.experimental_rerun()  # Fecha o menu forçando recarga da página
 
     response = llm.invoke(prompt)
 
