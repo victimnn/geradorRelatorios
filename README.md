@@ -5,6 +5,7 @@ Este projeto é uma aplicação web simples desenvolvida com **Streamlit** e **L
 
 ## Link do Projeto
 https://geradorrelatorios-victimnn.streamlit.app/
+
 ---
 
 ## Funcionalidades
