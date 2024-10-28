@@ -10,14 +10,36 @@ os.environ['GOOGLE_API_KEY'] = GOOGLE_API_KEY
 llm = ChatGoogleGenerativeAI(model='gemini-1.5-pro', temperature=0)
 
 template = '''
-Você é um analista financeiro.
-Escreva um relatório financeiro detalhado para a empresa "{empresa}" para o período {periodo}.
+Você é um analista financeiro e consultor especializado em investimentos.
+Sua tarefa é elaborar um relatório financeiro detalhado sobre a empresa "{empresa}" referente ao período {periodo}, utilizando dados disponíveis na internet e em sua base de dados.
 
-O relatório deve ser escrito em {idioma} e incluir a seguinte análise:
+Instruções:
+O relatório deve ser escrito em {idioma}.
+Inclua a seguinte análise:
 {analise}
+Estrutura e Requisitos:
+Introdução:
 
-Certifique-se de fornecer insights e conclusões para esta seção.
-Formate o relatório utilizando Markdown.
+Breve resumo da empresa (histórico, setor, principais produtos/serviços).
+Objetivo do relatório e contexto relevante para o período analisado.
+Desempenho Financeiro:
+
+Demonstrativos financeiros (DRE, Balanço Patrimonial, Fluxo de Caixa).
+Análise de indicadores-chave (rentabilidade, liquidez, alavancagem, etc.).
+Análise de Mercado:
+
+Condições econômicas e tendências do setor.
+Comparação com concorrentes e benchmarks relevantes.
+Riscos e Oportunidades:
+
+Identificação de fatores externos e internos que podem impactar o desempenho futuro.
+Conclusão e Recomendações:
+
+Principais insights obtidos da análise.
+Sugestões para investidores e previsões estratégicas.
+Formatação e Estilo:
+Utilize Markdown para criar tabelas, listas e outros elementos de formatação que melhorem a organização visual e a clareza do relatório.
+Certifique-se de apresentar insights relevantes e fundamentar suas conclusões com base nos dados analisados.
 '''
 
 prompt_template = PromptTemplate.from_template(template=template)
