@@ -56,7 +56,7 @@ analises = [
     "Análise de Posição de Mercado"
 ]
 
-st.title('📝Gerador de Relatórios Financeiros')
+st.title('Gerador de Relatórios Financeiros📝')
 
 st.sidebar.header('Configurações do Relatório')
 empresa = st.sidebar.selectbox('Selecione a empresa:', empresas)
