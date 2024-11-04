@@ -56,8 +56,9 @@ analises = [
     "Análise de Posição de Mercado"
 ]
 
-st.title('Gerador de Relatórios Financeiros:')
+st.title('📝 Gerador de Relatórios Financeiros')
 
+st.sidebar.header('Configurações do Relatório')
 empresa = st.sidebar.selectbox('Selecione a empresa:', empresas)
 trimestre = st.sidebar.selectbox('Selecione o trimestre:', trimestres)
 ano = st.sidebar.selectbox('Selecione o ano:', anos)
@@ -75,5 +76,5 @@ if st.sidebar.button('Gerar Relatório'):
 
     response = llm.invoke(prompt)
 
-    st.subheader('Relatório Gerado:')
+    st.subheader('📄 Relatório Gerado:')
     st.write(response.content)
